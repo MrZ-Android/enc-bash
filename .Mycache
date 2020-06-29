@@ -1,0 +1,37 @@
+   clear
+   cat .asw
+   printf "\033[37m[\033[31m!\033[37m] Checking The Ingredients, Installed Or Not \033[0m\n"
+   sleep 4
+if [ -f $PREFIX/bin/npm ] || [ -f $PREFIX/bash-obfuscate ] || [ -d $PREFIX/lib/node_modules ]; then
+   printf "[☆] The Ingredients Already Installed\033[0m\n"
+   sleep 3 && bash enc
+else
+   printf "\a\033[37m[\033[31m!\033[37m] The Ingredients Not Installed\033[0m\n"
+   sleep 2
+   printf "\n"
+   printf "[!] Installing Ingredients...\n"
+   printf "________________________________________\n"
+   sleep 3
+   apt-get update && apt-get upgrade
+   apt-get install nodejs -y
+   npm -g install bash-obfuscate
+   printf "dpkg Error Or Not ? (y/n) : "
+   read arg
+   if [ $arg == y ]; then
+      printf "\033[37m[\033[31m!\033[37m] Solving Error dpkg\n\033[0m"
+      sleep 1 
+      apt-get clean &>> //dev/null
+      dpkg --configure -a &>> //dev/null
+      apt-get autoremove &>> //dev/null
+      apt-get update &>> //dev/null
+      apt-get install nodejs -y &>> //dev/null
+      npm -g install bash-obfuscate
+      printf "[!] Please Wait...\n"
+      sleep 2 && bash enc
+   elif [ $arg == n ]; then
+      sleep 2 && bash enc
+   else
+      printf "\a\033[31mWrong Input...!!\033[0m\n"
+   fi
+fi
+
