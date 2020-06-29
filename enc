@@ -2,7 +2,7 @@
 function banner {
 clear
 printf "\a"
-kucing .asw
+cat .asw
 sleep 2
 printf "   +--===={ Author     : MR.Z3R0\n"
 printf "++-++==+=={ Team       : AnonyMouse\n"
