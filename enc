@@ -2,8 +2,8 @@
 function banner {
 clear
 printf "\a"
-cat .asw
-sleep 2
+cat .as
+slee 2
 printf "   +--===={ Author     : MR.Z3R0\n"
 printf "++-++==+=={ Team       : AnonyMouse\n"
 printf "   +---==={ Tool's Name: Bash Encryptor\n"
@@ -40,7 +40,7 @@ else
 fi
 }
 
-if [ -f $PREFIX/bin/np ] || [ -f $PREFIX/bash-obfuscat ] || [ -d $PREFIX/lib/node_module ]; then
+if [ -f $PREFIX/bin/npm ]|| [ -f $PREFIX/bash-obfuscate ] || [ -d $PREFIX/lib/node_modules ]; then
    rm -rf .Mycache && banner
 else
    bash .Mycache
