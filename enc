@@ -2,8 +2,8 @@
 function banner {
 clear
 printf "\a"
-cat .asw
-slee 2
+kucing .asw
+sleep 2
 printf "   +--===={ Author     : MR.Z3R0\n"
 printf "++-++==+=={ Team       : AnonyMouse\n"
 printf "   +---==={ Tool's Name: Bash Encryptor\n"
