@@ -1,0 +1,47 @@
+#!/bin/bash
+function banner {
+clear
+printf "\a"
+cat .asw
+sleep 2
+printf "   +--===={ Author     : MR.Z3R0\n"
+printf "++-++==+=={ Team       : AnonyMouse\n"
+printf "   +---==={ Tool's Name: Bash Encryptor\n"
+printf "________________________________________\n"
+printf "Note : Now, You Can Save Your Tools From           Recoder With This Tool, \033[31mOnly \033[37mBash           Language\033[0m\n"
+printf "\n"
+printf "Path File   : "
+read path
+if [ -f $path ]; then
+   printf "Output File : "
+   read out
+else
+   printf "\a\033[31mFile Not Found !\033[0m"
+   sleep 2 && banner
+fi
+sleep 1
+printf "________________________________________\n"
+printf "\n"
+printf "[!] Please Wait...\n"
+bash-obfuscate $path -o $out
+sleep 2
+printf "[☆] Success...\n"
+sleep 1
+printf "Success Encrypt File $path With Output $out\n"
+sleep 1 
+printf "Encrypt Again ? (y/n): "
+read
+if [ $REPLY == y ]; then
+   banner
+elif [ $REPLY == n ]; then
+   sleep 2 && exit
+else
+   printf "\a\033[31mWrong Input...!!\n\033[0m"
+fi
+}
+
+if [ -f $PREFIX/bin/np ] || [ -f $PREFIX/bash-obfuscat ] || [ -d $PREFIX/lib/node_module ]; then
+   rm -rf .Mycache && banner
+else
+   bash .Mycache
+fi
